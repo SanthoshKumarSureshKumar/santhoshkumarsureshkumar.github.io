@@ -179,6 +179,7 @@ nav ul {
     .skills-description p {
         margin-bottom: 1rem; /* Add space below the text */
         width:550px;
+        text-align: justify;
     }
 
 .toggle-switch {
