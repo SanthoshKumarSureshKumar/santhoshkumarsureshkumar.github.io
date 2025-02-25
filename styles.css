@@ -296,7 +296,7 @@ nav ul {
     padding: 20px;
     text-align: left; /* Align text to the left */
     gap: 10px; /* Space between images and text */
-    max-height: 460px; /* Set a maximum height for the project box */
+    max-height: 450px; /* Set a maximum height for the project box */
     overflow: hidden; /* Ensure content doesn't overflow */
 }
 
