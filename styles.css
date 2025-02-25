@@ -340,6 +340,10 @@ nav ul {
     margin-bottom: 0.5rem;
 }
 
+.project-text p {
+    text-align: justify;
+}
+
     .project-text h3 {
         color: #ff4c60;
         font-size: 2rem; /* Adjust the font size as needed */
