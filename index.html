@@ -1,0 +1,1606 @@
+<!doctype html>
+<html
+  lang="en"
+  data-ws-project="73849f2f-e006-4f1d-98ec-596c01cea064"
+  data-ws-last-published="2026-02-26T03:11:31.811Z"
+>
+  <head>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="app_generated_index-6937cd5a.D94V6ZEp.css"
+    />
+    <meta charset="UTF-8" />
+    <link rel="icon" href="favicon.ico" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta property="og:url" content="https://url/" />
+    <meta property="og:title" content="Home" />
+    <meta property="og:type" content="website" />
+    <title>Home</title>
+  </head>
+  <body class="w-element">
+    <div class="w-html-embed">
+      <style>
+        :root {
+          /* Light theme */
+          --bg: #f6f7fb;
+          --panel: #ffffff;
+          --panel2: #fbfbfe;
+
+          --text: #111827;
+          --muted: #4b5563;
+          --line: rgba(17, 24, 39, 0.1);
+
+          --accent: #2563eb;
+          --accent2: #7c3aed;
+
+          --shadow: 0 18px 45px rgba(17, 24, 39, 0.1);
+          --shadow2: 0 10px 25px rgba(17, 24, 39, 0.08);
+
+          --radius: 18px;
+          --radius2: 22px;
+          --container: 1120px;
+        }
+
+        * {
+          box-sizing: border-box;
+        }
+        html {
+          scroll-behavior: smooth;
+        }
+        body {
+          margin: 0;
+          font-family:
+            ui-sans-serif,
+            system-ui,
+            -apple-system,
+            Segoe UI,
+            Roboto,
+            Helvetica,
+            Arial;
+          color: var(--text);
+          background:
+            radial-gradient(
+              900px 500px at 12% 10%,
+              rgba(37, 99, 235, 0.1),
+              transparent 55%
+            ),
+            radial-gradient(
+              900px 500px at 85% 10%,
+              rgba(124, 58, 237, 0.1),
+              transparent 55%
+            ),
+            var(--bg);
+          line-height: 1.6;
+        }
+
+        a {
+          color: inherit;
+          text-decoration: none;
+        }
+        a:hover {
+          opacity: 0.92;
+        }
+        .wrap {
+          width: min(var(--container), 92vw);
+          margin: 0 auto;
+        }
+
+        /* ===== HEADER ===== */
+        .topbar {
+          position: sticky;
+          top: 0;
+          z-index: 50;
+          background: rgba(246, 247, 251, 0.86);
+          backdrop-filter: blur(10px);
+          border-bottom: 1px solid var(--line);
+        }
+        .topbar .row {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 12px;
+          padding: 14px 0;
+        }
+        .brand {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          font-weight: 900;
+          white-space: nowrap;
+        }
+        .dot {
+          width: 10px;
+          height: 10px;
+          border-radius: 999px;
+          background: linear-gradient(135deg, var(--accent), var(--accent2));
+          box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+        }
+
+        /* Desktop nav */
+        .nav {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          flex-wrap: nowrap; /* prevent wrapping */
+          justify-content: flex-end;
+        }
+        .navlink {
+          font-size: 14px;
+          font-weight: 800;
+          color: var(--muted);
+          padding: 8px 10px;
+          border-radius: 12px;
+          border: 1px solid transparent;
+          display: inline-flex;
+          align-items: center;
+          height: 38px; /* align with icons */
+          white-space: nowrap;
+        }
+        .navlink:hover {
+          background: rgba(17, 24, 39, 0.05);
+          color: var(--text);
+        }
+        .navlink.active {
+          color: var(--text);
+          border-color: rgba(37, 99, 235, 0.22);
+          background: rgba(37, 99, 235, 0.08);
+        }
+
+        /* Hamburger (mobile/tablet) */
+        .hamburger {
+          display: none;
+          width: 44px;
+          height: 40px;
+          border-radius: 14px;
+          border: 1px solid rgba(17, 24, 39, 0.12);
+          background: rgba(255, 255, 255, 0.92);
+          box-shadow: var(--shadow2);
+          cursor: pointer;
+          align-items: center;
+          justify-content: center;
+          gap: 4px;
+          flex-direction: column;
+        }
+        .hamburger span {
+          width: 18px;
+          height: 2px;
+          background: var(--text);
+          border-radius: 99px;
+          opacity: 0.85;
+        }
+
+        /* ===== MOBILE MENU (COMPACT TEXT LINKS) ===== */
+        .mobileMenu {
+          display: none;
+          border-top: 1px solid var(--line);
+          background: rgba(246, 247, 251, 0.92);
+          backdrop-filter: blur(10px);
+        }
+        .mobileMenuInner {
+          padding: 12px 0 14px;
+          display: flex;
+          flex-wrap: wrap;
+          gap: 12px 18px; /* compact */
+          align-items: center;
+          justify-content: flex-start;
+        }
+        .mobileMenuInner a {
+          display: inline-block;
+          padding: 6px 2px;
+          font-weight: 900;
+          color: rgba(17, 24, 39, 0.88);
+          background: transparent;
+          border: none;
+        }
+        .mobileMenuInner a:hover {
+          text-decoration: underline;
+          opacity: 1;
+        }
+        .topbar.open .mobileMenu {
+          display: block;
+        }
+
+        /* === ICON LINKS (LinkedIn / GitHub / Contact / Email) === */
+        .iconLink {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          width: 38px;
+          height: 38px;
+          border-radius: 12px;
+          border: 1px solid rgba(17, 24, 39, 0.12);
+          background: rgba(255, 255, 255, 0.92);
+          box-shadow: var(--shadow2);
+          color: rgba(17, 24, 39, 0.88);
+          vertical-align: middle;
+        }
+        .iconLink:hover {
+          opacity: 1;
+          transform: translateY(-1px);
+          text-decoration: none;
+        }
+        .iconLink:active {
+          transform: translateY(0);
+        }
+        .iconLink svg {
+          width: 18px;
+          height: 18px;
+        }
+
+        /* ===== SECTIONS ===== */
+        .section {
+          padding: 48px 0;
+        }
+        .section h2 {
+          font-size: 22px;
+          margin: 0 0 14px;
+          letter-spacing: -0.2px;
+        }
+        .muted {
+          color: var(--muted);
+        }
+
+        .card {
+          border: 1px solid var(--line);
+          background: var(--panel);
+          border-radius: var(--radius2);
+          padding: 16px;
+          box-shadow: var(--shadow);
+        }
+        .card.soft {
+          background: var(--panel2);
+        }
+
+        .grid {
+          display: grid;
+          gap: 16px;
+        }
+        .grid.two {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+        .grid.three {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        /* ===== ABOUT ===== */
+        .hero {
+          padding: 46px 0 10px;
+        }
+        h1 {
+          margin: 10px 0 8px;
+          font-size: clamp(34px, 4.1vw, 52px);
+          line-height: 1.05;
+          letter-spacing: -0.8px;
+        }
+        .kicker {
+          display: inline-flex;
+          gap: 10px;
+          align-items: center;
+          color: var(--muted);
+          font-weight: 900;
+          font-size: 13px;
+          border: 1px solid rgba(17, 24, 39, 0.1);
+          background: rgba(255, 255, 255, 0.8);
+          padding: 8px 12px;
+          border-radius: 999px;
+          box-shadow: var(--shadow2);
+        }
+        .aboutRow {
+          display: grid;
+          grid-template-columns: 180px 1fr;
+          gap: 16px;
+          align-items: start;
+          margin-top: 14px;
+        }
+        .avatar {
+          width: 180px;
+          aspect-ratio: 1/1;
+          border-radius: 24px;
+          overflow: hidden;
+          border: 1px solid rgba(17, 24, 39, 0.1);
+          background: rgba(255, 255, 255, 0.8);
+          box-shadow: var(--shadow);
+        }
+        .avatar img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          display: block;
+        }
+        .lead {
+          margin: 0;
+          color: var(--muted);
+          font-size: clamp(15px, 1.45vw, 18px);
+        }
+
+        /* ===== EXPERIENCE ===== */
+        .roleRow {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 14px;
+          flex-wrap: wrap;
+          margin-bottom: 10px;
+        }
+        .company {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          flex-wrap: wrap;
+        }
+        .logo {
+          width: 44px;
+          height: 44px;
+          border-radius: 14px;
+          overflow: hidden;
+          border: 1px solid rgba(17, 24, 39, 0.1);
+          background: rgba(255, 255, 255, 0.8);
+          box-shadow: var(--shadow2);
+        }
+        .logo img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          display: block;
+        }
+        .meta {
+          display: flex;
+          gap: 10px;
+          flex-wrap: wrap;
+          color: var(--muted);
+          font-size: 13px;
+          font-weight: 900;
+        }
+        .meta span {
+          border: 1px solid rgba(17, 24, 39, 0.1);
+          background: rgba(255, 255, 255, 0.8);
+          padding: 6px 10px;
+          border-radius: 999px;
+          box-shadow: var(--shadow2);
+        }
+        ul.bullets {
+          margin: 10px 0 0;
+          padding-left: 18px;
+          color: var(--muted);
+        }
+        ul.bullets li {
+          margin: 6px 0;
+        }
+
+        /* ===== PROJECTS (BIGGER CARDS) ===== */
+        .projectsGrid {
+          display: grid;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 16px;
+        }
+        .projCard {
+          padding: 0;
+          overflow: hidden;
+        }
+        .projImg {
+          width: 100%;
+          aspect-ratio: 16/9;
+          background: rgba(255, 255, 255, 0.8);
+          border-bottom: 1px solid var(--line);
+          overflow: hidden;
+        }
+        .projImg img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          display: block;
+        }
+        .projBody {
+          padding: 16px;
+        }
+        .projTitle {
+          display: flex;
+          align-items: flex-start;
+          justify-content: space-between;
+          gap: 12px;
+          margin-bottom: 6px;
+        }
+        .projTitle h3 {
+          margin: 0;
+          font-size: 18px;
+          letter-spacing: -0.2px;
+        }
+        .smallBtn {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          padding: 8px 10px;
+          border-radius: 12px;
+          border: 1px solid rgba(37, 99, 235, 0.28);
+          background: rgba(37, 99, 235, 0.08);
+          font-weight: 900;
+          font-size: 13px;
+          white-space: nowrap;
+        }
+        .smallBtn:hover {
+          opacity: 0.95;
+        }
+
+        /* ===== RESUME (EMBED PDF) ===== */
+        .resumeFrame {
+          width: 100%;
+          border: 1px solid rgba(17, 24, 39, 0.1);
+          border-radius: 18px;
+          overflow: hidden;
+          background: #fff;
+          box-shadow: var(--shadow);
+        }
+        .resumeFrame .bar {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 10px;
+          flex-wrap: wrap;
+          padding: 12px;
+          border-bottom: 1px solid var(--line);
+          background: rgba(255, 255, 255, 0.92);
+        }
+        .resumeFrame iframe {
+          width: 100%;
+          height: 760px;
+          border: 0;
+          display: block;
+          background: #fff;
+        }
+
+        .footer {
+          padding: 26px 0 40px;
+          border-top: 1px solid var(--line);
+          color: var(--muted);
+          font-size: 13px;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 980px) {
+          .grid.two,
+          .grid.three {
+            grid-template-columns: 1fr;
+          }
+          .projectsGrid {
+            grid-template-columns: 1fr;
+          }
+          .aboutRow {
+            grid-template-columns: 1fr;
+          }
+          .avatar {
+            width: 140px;
+          }
+          .resumeFrame iframe {
+            height: 640px;
+          }
+        }
+
+        /* IMPORTANT: switch to hamburger earlier so nav never wraps at 991 */
+        @media (max-width: 1050px) {
+          .nav {
+            display: none;
+          }
+          .hamburger {
+            display: flex;
+          }
+        }
+      
+        /* ===== NO-JS FIXES ===== */
+        /* The exported preset sets :root { white-space: pre-wrap; } which preserves source newlines.
+           With JS removed, those newlines can break layout. Match the JS-rendered look by collapsing whitespace. */
+        body {
+          white-space: normal;
+          white-space-collapse: collapse;
+        }
+
+        /* CSS-only hamburger toggle (replaces JS that toggled .topbar.open) */
+        .topbar .wrap {
+          position: relative;
+        }
+        .menuToggle {
+          position: absolute;
+          opacity: 0;
+          width: 1px;
+          height: 1px;
+          pointer-events: none;
+        }
+        .menuToggle:checked ~ .mobileMenu {
+          display: block;
+        }
+
+        /* Optional hamburger animation (visual only) */
+        .menuToggle:checked ~ .row .hamburger span:nth-child(1) {
+          transform: translateY(6px) rotate(45deg);
+        }
+        .menuToggle:checked ~ .row .hamburger span:nth-child(2) {
+          opacity: 0;
+        }
+        .menuToggle:checked ~ .row .hamburger span:nth-child(3) {
+          transform: translateY(-6px) rotate(-45deg);
+        }
+        .hamburger span {
+          transition: transform 160ms ease, opacity 160ms ease;
+        }
+
+      </style>
+    </div>
+    <header id="topbar" class="w-element topbar">
+      <div class="w-element wrap">
+        
+        <input type="checkbox" id="menuToggle" class="w-element menuToggle" aria-hidden="true" />
+        <div class="w-element row">
+          <a href="#top" class="w-element brand"
+            ><span class="w-element dot"></span
+            ><span class="w-element">Santhosh Kumar</span></a
+          >
+          <nav aria-label="Primary navigation" class="w-element nav">
+            <a href="#about" class="w-element navlink">About</a
+            ><a href="#experience" class="w-element navlink">Experience</a
+            ><a href="#skills" class="w-element navlink">Skills</a
+            ><a href="#projects" class="w-element navlink">Projects</a
+            ><a href="#publications" class="w-element navlink">Publications</a
+            ><a href="#resume" class="w-element navlink">Resume</a
+            ><a
+              href="#contact"
+              aria-label="Contact"
+              title="Contact"
+              class="w-element iconLink"
+              ><svg
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                aria-hidden="true"
+                class="w-element"
+              >
+                <path
+                  d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C10.07 21 3 13.93 3 5c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2Z"
+                  class="w-element"
+                ></path></svg></a
+            ><a
+              href="https://www.linkedin.com/in/s-santhosh-kumar-"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="LinkedIn"
+              title="LinkedIn"
+              class="w-element iconLink"
+              ><svg
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                aria-hidden="true"
+                class="w-element"
+              >
+                <path
+                  d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5ZM.5 23.5h4V7.98h-4V23.5ZM8.5 7.98h3.83v2.12h.05c.53-1 1.84-2.06 3.79-2.06 4.05 0 4.8 2.66 4.8 6.12v9.34h-4v-8.27c0-1.97-.04-4.5-2.74-4.5-2.74 0-3.16 2.14-3.16 4.36v8.41h-4V7.98Z"
+                  class="w-element"
+                ></path></svg></a
+            ><a
+              href="https://github.com/SanthoshKumarSureshKumar"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="GitHub"
+              title="GitHub"
+              class="w-element iconLink"
+              ><svg
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                aria-hidden="true"
+                class="w-element"
+              >
+                <path
+                  d="M12 .5C5.73.5.75 5.7.75 12.2c0 5.2 3.44 9.62 8.2 11.18.6.12.82-.27.82-.6v-2.1c-3.34.75-4.04-1.64-4.04-1.64-.55-1.42-1.34-1.8-1.34-1.8-1.1-.78.08-.77.08-.77 1.22.09 1.86 1.29 1.86 1.29 1.08 1.9 2.83 1.35 3.52 1.03.11-.81.42-1.35.76-1.66-2.67-.32-5.48-1.38-5.48-6.12 0-1.35.46-2.45 1.22-3.32-.12-.32-.53-1.62.12-3.38 0 0 1-.33 3.3 1.27.96-.28 1.99-.42 3.02-.42 1.03 0 2.06.14 3.02.42 2.3-1.6 3.3-1.27 3.3-1.27.65 1.76.24 3.06.12 3.38.76.87 1.22 1.97 1.22 3.32 0 4.75-2.81 5.79-5.49 6.11.43.39.82 1.15.82 2.32v3.44c0 .33.22.72.83.6 4.76-1.56 8.2-5.98 8.2-11.18C23.25 5.7 18.27.5 12 .5Z"
+                  class="w-element"
+                ></path></svg
+            ></a>
+          </nav>
+          <label
+            id="menuBtn"
+            aria-label="Open menu"
+            aria-expanded="false"
+            aria-controls="mobileMenu"
+            class="w-element hamburger"
+           for="menuToggle">
+            <span class="w-element"></span><span class="w-element"></span
+            ><span class="w-element"></span>
+          </label>
+        </div>
+        <div id="mobileMenu" class="w-element mobileMenu">
+          <div class="w-element mobileMenuInner">
+            <a href="#about" class="w-element">About</a
+            ><a href="#experience" class="w-element">Experience</a
+            ><a href="#skills" class="w-element">Skills</a
+            ><a href="#projects" class="w-element">Projects</a
+            ><a href="#publications" class="w-element">Publications</a
+            ><a href="#resume" class="w-element">Resume</a
+            ><a
+              href="#contact"
+              aria-label="Contact"
+              title="Contact"
+              class="w-element iconLink"
+              ><svg
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                aria-hidden="true"
+                class="w-element"
+              >
+                <path
+                  d="M2 6.5C2 5.12 3.12 4 4.5 4h15C20.88 4 22 5.12 22 6.5v11c0 1.38-1.12 2.5-2.5 2.5h-15C3.12 20 2 18.88 2 17.5v-11Zm2.3-.5 7.2 5.1c.31.22.73.22 1.04 0L19.7 6H4.3Zm15.7 2.1-6.3 4.46c-.98.69-2.3.69-3.28 0L4 8.1V17.5c0 .28.22.5.5.5h15c.28 0 .5-.22.5-.5V8.1Z"
+                  class="w-element"
+                ></path></svg></a
+            ><a
+              href="REPLACE_LINKEDIN_URL"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="LinkedIn"
+              title="LinkedIn"
+              class="w-element iconLink"
+              ><svg
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                aria-hidden="true"
+                class="w-element"
+              >
+                <path
+                  d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5ZM.5 23.5h4V7.98h-4V23.5ZM8.5 7.98h3.83v2.12h.05c.53-1 1.84-2.06 3.79-2.06 4.05 0 4.8 2.66 4.8 6.12v9.34h-4v-8.27c0-1.97-.04-4.5-2.74-4.5-2.74 0-3.16 2.14-3.16 4.36v8.41h-4V7.98Z"
+                  class="w-element"
+                ></path></svg></a
+            ><a
+              href="REPLACE_GITHUB_URL"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="GitHub"
+              title="GitHub"
+              class="w-element iconLink"
+              ><svg
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                aria-hidden="true"
+                class="w-element"
+              >
+                <path
+                  d="M12 .5C5.73.5.75 5.7.75 12.2c0 5.2 3.44 9.62 8.2 11.18.6.12.82-.27.82-.6v-2.1c-3.34.75-4.04-1.64-4.04-1.64-.55-1.42-1.34-1.8-1.34-1.8-1.1-.78.08-.77.08-.77 1.22.09 1.86 1.29 1.86 1.29 1.08 1.9 2.83 1.35 3.52 1.03.11-.81.42-1.35.76-1.66-2.67-.32-5.48-1.38-5.48-6.12 0-1.35.46-2.45 1.22-3.32-.12-.32-.53-1.62.12-3.38 0 0 1-.33 3.3 1.27.96-.28 1.99-.42 3.02-.42 1.03 0 2.06.14 3.02.42 2.3-1.6 3.3-1.27 3.3-1.27.65 1.76.24 3.06.12 3.38.76.87 1.22 1.97 1.22 3.32 0 4.75-2.81 5.79-5.49 6.11.43.39.82 1.15.82 2.32v3.44c0 .33.22.72.83.6 4.76-1.56 8.2-5.98 8.2-11.18C23.25 5.7 18.27.5 12 .5Z"
+                  class="w-element"
+                ></path></svg
+            ></a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main id="top" class="w-element wrap">
+      <section id="about" class="w-element hero">
+        <span class="w-element kicker"
+          >Data Scientist . Analytics &amp; ML
+        </span>
+        <div class="w-element aboutRow">
+          <div class="w-element avatar">
+            <img
+              alt=""
+              width="600"
+              height="600"
+              src="assets/santhosh_portfilio_0Y3ilKFx_Nd098eH7Uc5D.jpg"
+              class="w-image"
+              sizes="100vw"
+              srcset="
+                assets/santhosh_portfilio_0Y3ilKFx_Nd098eH7Uc5D.jpg"
+              decoding="async"
+              loading="lazy"
+            />
+          </div>
+          <div class="w-element card">
+            <p class="w-element lead">
+              I’m a Data Science M.S. graduate student with strong skills in
+              Python, SQL, machine learning, NLP, and data engineering. I
+              automate data extraction with Selenium, SOAP, and Requests, then
+              clean, encode, and analyze datasets to improve quality and speed.
+              I create clear dashboards and reports in Power BI/Tableau and work
+              with Looker, PostgreSQL/MySQL, PySpark, Azure, and Apache Spark.
+              Known for combining automation, analytics, and modeling to deliver
+              actionable insights and measurable efficiency gains, with a
+              practical, results-first mindset every day.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section id="experience" class="w-element section">
+        <h2 class="w-element">Experience</h2>
+        <div class="w-element grid two">
+          <article class="w-element card">
+            <div class="w-element roleRow">
+              <div class="w-element company">
+                <div class="w-element logo">
+                  <img
+                    alt=""
+                    width="200"
+                    height="200"
+                    src="assets/novitium_1vGULbDpRlhd8XOhhIsv5.png"
+                    class="w-image"
+                    sizes="100vw"
+                    srcset="
+                      assets/novitium_1vGULbDpRlhd8XOhhIsv5.png"
+                    decoding="async"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="w-element">
+                  <div class="w-element w-element-7">Data Scientist Intern</div>
+                  <div class="w-element w-element-8 muted">
+                    Novitium Pharma<br />USA
+                  </div>
+                </div>
+              </div>
+              <div class="w-element meta">
+                <span class="w-element">ETL</span
+                ><span class="w-element">Automation</span
+                ><span class="w-element">Reporting</span
+                ><span class="w-element">Selenium</span
+                ><span class="w-element">Web Scraping</span
+                ><span class="w-element">SOAP</span
+                ><span class="w-element">Data Cleaning</span
+                ><span class="w-element">Dashboarding</span>
+              </div>
+            </div>
+          </article>
+          <article class="w-element card">
+            <div class="w-element roleRow">
+              <div class="w-element company">
+                <div class="w-element logo">
+                  <img
+                    alt=""
+                    width="95"
+                    height="95"
+                    src="assets/gcp__NJaUcAqMQTj5KRyYTmwm.png"
+                    class="w-image"
+                    sizes="100vw"
+                    srcset="
+                      assets/gcp__NJaUcAqMQTj5KRyYTmwm.png"
+                    decoding="async"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="w-element">
+                  <div class="w-element w-element-9">Data Analyst</div>
+                  <div class="w-element w-element-10 muted">
+                    Office of Commissioner of Police Chennai<br />India
+                  </div>
+                </div>
+              </div>
+              <div class="w-element meta">
+                <span class="w-element">NLP</span
+                ><span class="w-element">Sentiment Analysis</span
+                ><span class="w-element">LLM</span
+                ><span class="w-element">Automation</span
+                ><span class="w-element">WebScrapping</span
+                ><span class="w-element">Dashboarding</span>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="w-element w-element-25 grid two">
+          <article class="w-element card">
+            <div class="w-element roleRow">
+              <div class="w-element company">
+                <div class="w-element logo">
+                  <img
+                    alt=""
+                    width="85"
+                    height="93"
+                    src="assets/civil_supply_TYL18hBF4BpFqOEQFuT03.png"
+                    class="w-image"
+                    sizes="100vw"
+                    srcset="
+                      assets/civil_supply_TYL18hBF4BpFqOEQFuT03.png"
+                    decoding="async"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="w-element">
+                  <div class="w-element w-element-26">Data Analyst</div>
+                  <div class="w-element w-element-27 muted">
+                    Tamil Nadu Civil Supply and Corporation<br />India
+                  </div>
+                </div>
+              </div>
+              <div class="w-element meta">
+                <span class="w-element">Forecasting</span
+                ><span class="w-element">Inventory Optimization</span
+                ><span class="w-element">Machine Learning</span
+                ><span class="w-element">Statistical Analysis</span
+                ><span class="w-element">Reporting</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section id="skills" class="w-element w-element-38 section">
+        <h2 class="w-element">Skills &amp; Tools</h2>
+        <div class="w-element grid three">
+          <div class="w-element card">
+            <h3 class="w-element w-element-11">Core</h3>
+            <p class="w-element w-element-12 muted">
+              Python, R, SQL, HTML5, CSS, JavaScript, Statistics, EDA, Data
+              Cleaning, Feature Engineering, Data Visualization, Reporting
+            </p>
+          </div>
+          <div class="w-element card">
+            <h3 class="w-element w-element-13">BI</h3>
+            <p class="w-element w-element-14 muted">
+              Power BI, Tableau, Looker, Gephi, Microsoft Office, KPI Design,
+              Dashboarding, Reporting
+            </p>
+          </div>
+          <div class="w-element card">
+            <h3 class="w-element w-element-15">ML &amp; Cloud</h3>
+            <p class="w-element w-element-16 muted">
+              Machine Learning, Apache Spark, PySpark, ETL, MySQL, PostgreSQL,
+              MongoDB, HDFS, AWS CLI, Azure, SAS, APIs
+            </p>
+          </div>
+        </div>
+      </section>
+      <section id="projects" class="w-element section">
+        <h2 class="w-element">Projects</h2>
+        <article class="w-element w-element-67 card projCard">
+          <div class="w-element w-element-68">
+            <img
+              alt=""
+              width="768"
+              height="512"
+              src="assets/01_web_data_scraping_Yro-YrvOlC32-zz8xhShu.png"
+              class="w-image w-image-21"
+              sizes="100vw"
+              srcset="
+                assets/01_web_data_scraping_Yro-YrvOlC32-zz8xhShu.png"
+              decoding="async"
+              loading="lazy"
+            /><img
+              alt=""
+              width="768"
+              height="512"
+              src="assets/02_data_cleaning_encoding_4GTsWcUx0QtAFoue4w_cP.png"
+              class="w-image w-image-22"
+              sizes="100vw"
+              srcset="
+                assets/02_data_cleaning_encoding_4GTsWcUx0QtAFoue4w_cP.png"
+              decoding="async"
+              loading="lazy"
+            /><img
+              alt=""
+              width="768"
+              height="512"
+              src="assets/03_growth_dashboard_t1F-dkkzDVhxK2-GnBcvQ.png"
+              class="w-image w-image-23"
+              sizes="100vw"
+              srcset="
+                assets/03_growth_dashboard_t1F-dkkzDVhxK2-GnBcvQ.png"
+              decoding="async"
+              loading="lazy"
+            /><img
+              alt=""
+              width="768"
+              height="512"
+              src="assets/04_automated_scheduling_logs_RIVW65Szf6AfvbIcYkPnM.png"
+              class="w-image w-image-24"
+              sizes="100vw"
+              srcset="
+                assets/04_automated_scheduling_logs_RIVW65Szf6AfvbIcYkPnM.png"
+              decoding="async"
+              loading="lazy"
+            />
+          </div>
+          <div class="w-element projBody">
+            <div class="w-element projTitle">
+              <h3 class="w-element">
+                Pharma Sales Data Automation (Novitium Pharma)
+              </h3>
+              <a
+                href="https://github.com/SanthoshKumarSureshKumar/complaint-segregation-using-sentiment-analysis--python"
+                target="_blank"
+                rel="noreferrer"
+                class="w-element smallBtn"
+                >GitHub</a
+              >
+            </div>
+            <p class="w-element w-element-69 muted">
+              Automated extraction of pharmaceutical sales and marketing data
+              from Clarivate and Orange Book sources using Selenium and Python.
+              Implemented resilient scraping with pagination handling, retries,
+              and field validation. Cleaned missing values, standardized
+              formats, and applied one-hot encoding to prepare modeling-ready
+              datasets. Reduced manual preprocessing time by about 50% and
+              delivered reusable scripts and summary outputs that enabled faster
+              reporting and trend analysis for analysts. Automated scheduled
+              runs and versioned datasets for consistent refresh.
+            </p>
+          </div>
+        </article>
+        <article class="w-element w-element-37 card projCard">
+          <div class="w-element w-element-30">
+            <img
+              alt=""
+              width="438"
+              height="240"
+              src="assets/project1-image1_9dH9_besyzxrIDqe31Ii7.jpg"
+              class="w-image w-image-2"
+              sizes="100vw"
+              srcset="
+                assets/project1-image1_9dH9_besyzxrIDqe31Ii7.jpg"
+              decoding="async"
+              loading="lazy"
+            /><img
+              alt=""
+              width="438"
+              height="263"
+              src="assets/project1-image2_9DBqEBM7pO8ZcluTS9w-d.jpg"
+              class="w-image w-image-3"
+              sizes="100vw"
+              srcset="
+                assets/project1-image2_9DBqEBM7pO8ZcluTS9w-d.jpg"
+              decoding="async"
+              loading="lazy"
+            /><img
+              alt=""
+              width="438"
+              height="332"
+              src="assets/project1-image3_HRrKIg71KPalkdbGcEM89.jpg"
+              class="w-image w-image-4"
+              sizes="100vw"
+              srcset="
+                assets/project1-image3_HRrKIg71KPalkdbGcEM89.jpg"
+              decoding="async"
+              loading="lazy"
+            /><img
+              alt=""
+              width="438"
+              height="328"
+              src="assets/project1-image4_RAvTujHYF9F_JoOrhaELy.jpg"
+              class="w-image w-image-1"
+              sizes="100vw"
+              srcset="
+                assets/project1-image4_RAvTujHYF9F_JoOrhaELy.jpg"
+              decoding="async"
+              loading="lazy"
+            />
+          </div>
+          <div class="w-element projBody">
+            <div class="w-element projTitle">
+              <h3 class="w-element">Complaint Segregation Application</h3>
+              <a
+                href="https://github.com/SanthoshKumarSureshKumar/complaint-segregation-using-sentiment-analysis--python"
+                target="_blank"
+                rel="noreferrer"
+                class="w-element smallBtn"
+                >GitHub</a
+              >
+            </div>
+            <p class="w-element w-element-35 muted">
+              Built a Twitter-based complaint segregation pipeline to classify
+              and prioritize issues using sentiment polarity and intensity.
+              Collected tweets via SOAP, Selenium, and Requests, then translated
+              non-English content with MBART for consistent processing. Applied
+              a RoBERTa model to score sentiment and categorize complaints,
+              reducing manual testing by roughly 80%. Produced dashboards and
+              plots to track volumes, acknowledgments, actions taken, and trends
+              over time. Logged failures, tuned thresholds, and shared results
+              for stakeholder feedback cycles.
+            </p>
+          </div>
+        </article>
+        <article class="w-element w-element-33 card projCard">
+          <div class="w-element w-element-32">
+            <img
+              alt=""
+              width="2048"
+              height="2048"
+              src="assets/project2_KeFvXXrW3yv6fsnSsLNrc.jpeg"
+              class="w-image w-image-9"
+              sizes="100vw"
+              srcset="
+                assets/project2_KeFvXXrW3yv6fsnSsLNrc.jpeg"
+              decoding="async"
+              loading="lazy"
+            /><img
+              alt=""
+              width="438"
+              height="274"
+              src="assets/project_2_image2_RcsqTKF4aH5FNzFn_OGLE.png"
+              class="w-image w-image-10"
+              sizes="100vw"
+              srcset="
+                assets/project_2_image2_RcsqTKF4aH5FNzFn_OGLE.png"
+              decoding="async"
+              loading="lazy"
+            /><img
+              alt=""
+              width="438"
+              height="274"
+              src="assets/project2_img3_ufhVyFEn_DYqi7z30NQaY.png"
+              class="w-image w-image-11"
+              sizes="100vw"
+              srcset="
+                assets/project2_img3_ufhVyFEn_DYqi7z30NQaY.png"
+              decoding="async"
+              loading="lazy"
+            /><img
+              alt=""
+              width="438"
+              height="274"
+              src="assets/project2_img4_MleywCqsepfQKd55wLsTo.png"
+              class="w-image w-image-12"
+              sizes="100vw"
+              srcset="
+                assets/project2_img4_MleywCqsepfQKd55wLsTo.png"
+              decoding="async"
+              loading="lazy"
+            />
+          </div>
+          <div class="w-element projBody">
+            <div class="w-element projTitle">
+              <h3 class="w-element">Uber Data Analytics using GCP</h3>
+              <a
+                href="https://github.com/SanthoshKumarSureshKumar/Uber-data-analytics"
+                target="_blank"
+                rel="noreferrer"
+                class="w-element smallBtn"
+                >GitHub</a
+              >
+            </div>
+            <p class="w-element w-element-36 muted">
+              This project uses the &quot;NYC 2023&quot; dataset and Google
+              Cloud Platform (GCP) to improve urban public transportation
+              accessibility by analyzing data and collaborating with
+              stakeholders to enhance transit quality, involving data
+              acquisition, processing with Mage ETL, storage in Google Cloud
+              Storage, analysis in BigQuery, and visualization in Looker
+              dashboards, focusing on data security and scalability, with
+              success measured by increased ridership, accessibility, reduced
+              congestion, and rider satisfaction, modeling GCP for urban transit
+              solutions.
+            </p>
+          </div>
+        </article>
+        <article class="w-element w-element-61 card projCard">
+          <div class="w-element w-element-62">
+            <img
+              alt=""
+              width="1024"
+              height="768"
+              src="assets/g1_-qkgUe_IwsE3wferiJ9h1.png"
+              class="w-image w-image-13"
+              sizes="100vw"
+              srcset="
+                assets/g1_-qkgUe_IwsE3wferiJ9h1.png"
+              decoding="async"
+              loading="lazy"
+            /><img
+              alt=""
+              width="1024"
+              height="768"
+              src="assets/g2_3xQiQHNJ_1RdWY8c3Aebe.png"
+              class="w-image w-image-14"
+              sizes="100vw"
+              srcset="
+                assets/g2_3xQiQHNJ_1RdWY8c3Aebe.png"
+              decoding="async"
+              loading="lazy"
+            /><img
+              alt=""
+              width="1024"
+              height="768"
+              src="assets/g3_kppcRkqQO_-mZ7mg6Agrf.png"
+              class="w-image w-image-15"
+              sizes="100vw"
+              srcset="
+                assets/g3_kppcRkqQO_-mZ7mg6Agrf.png"
+              decoding="async"
+              loading="lazy"
+            /><img
+              alt=""
+              width="1024"
+              height="768"
+              src="assets/g4_AjnE-GLvrpnKkgJcgH3s_.png"
+              class="w-image w-image-16"
+              sizes="100vw"
+              srcset="
+                assets/g4_AjnE-GLvrpnKkgJcgH3s_.png"
+              decoding="async"
+              loading="lazy"
+            />
+          </div>
+          <div class="w-element projBody">
+            <div class="w-element projTitle">
+              <h3 class="w-element">
+                Character Network Analysis – A Song of Ice and Fire
+              </h3>
+              <a
+                href="https://github.com/SanthoshKumarSureshKumar/Gephi-Projects"
+                target="_blank"
+                rel="noreferrer"
+                class="w-element smallBtn"
+                >GitHub</a
+              >
+            </div>
+            <p class="w-element w-element-63 muted">
+              Analyzed character interaction networks across five A Song of Ice
+              and Fire books using weighted nodes and edges. Cleaned interaction
+              data, then built Gephi visualizations with ForceAtlas2,
+              Fruchterman-Reingold, Yifan Hu, and OpenOrd layouts. Computed
+              degree, betweenness, and eigenvector centrality plus modularity
+              communities to identify central characters, bridge nodes, and
+              factions. Exported publication-ready graphs and ranked summaries,
+              documenting parameters for reproducibility. Compared community
+              structures across books to observe shifting alliances and
+              narrative focus changes.
+            </p>
+          </div>
+        </article>
+        <article class="w-element w-element-64 card projCard">
+          <div class="w-element w-element-65">
+            <img
+              alt=""
+              width="1433"
+              height="790"
+              src="assets/a1_NOKQQ_qWrA-hBVkUkg4cX.png"
+              class="w-image w-image-17"
+              sizes="100vw"
+              srcset="
+                assets/a1_NOKQQ_qWrA-hBVkUkg4cX.png"
+              decoding="async"
+              loading="lazy"
+            /><img
+              alt=""
+              width="1029"
+              height="811"
+              src="assets/a2__AdNQv0oXMeEV3ZYW2GSy.png"
+              class="w-image w-image-18"
+              sizes="100vw"
+              srcset="
+                assets/a2__AdNQv0oXMeEV3ZYW2GSy.png"
+              decoding="async"
+              loading="lazy"
+            /><img
+              alt=""
+              width="1482"
+              height="222"
+              src="assets/a3_kBi00B0QKKlhMTMR2pOL3.png"
+              class="w-image w-image-19"
+              sizes="100vw"
+              srcset="
+                assets/a3_kBi00B0QKKlhMTMR2pOL3.png"
+              decoding="async"
+              loading="lazy"
+            /><img
+              alt=""
+              width="1482"
+              height="790"
+              src="assets/a4_2sk3fiUvPhDc0KYCy9MzC.png"
+              class="w-image w-image-20"
+              sizes="100vw"
+              srcset="
+                assets/a4_2sk3fiUvPhDc0KYCy9MzC.png"
+              decoding="async"
+              loading="lazy"
+            />
+          </div>
+          <div class="w-element projBody">
+            <div class="w-element projTitle">
+              <h3 class="w-element">
+                Economical Impact of COVID-19 (GDP, Cases, Unemployment)
+              </h3>
+              <a
+                href="https://github.com/SanthoshKumarSureshKumar/Tableau-Projects/tree/main/The%20Economic%20Impact%20of%20COVID-19%3A%20A%20Visual%20Analysis%20of%20GDP%2C%20Cases%2C%20and%20Unemployment"
+                target="_blank"
+                rel="noreferrer"
+                class="w-element smallBtn"
+                >GitHub</a
+              >
+            </div>
+            <p class="w-element w-element-66 muted">
+              Created a Tableau dashboard linking U.S. GDP (1961–2021), COVID-19
+              cases (2020), and unemployment indicators (1979–2022). Cleaned and
+              standardized fields across sources, then blended datasets using a
+              shared Year key. Built interactive filters and time-series views
+              to compare pre-pandemic vs. pandemic periods and highlight
+              contraction and recovery patterns. Added annotations and tooltips
+              to explain key inflection points and support stakeholder decision
+              discussions. Presented final insights as story points and
+              recommended metrics for future monitoring.
+            </p>
+          </div>
+        </article>
+        <article class="w-element w-element-70 card projCard">
+          <div class="w-element w-element-71">
+            <img
+              alt=""
+              width="1383"
+              height="761"
+              src="assets/p3i2_YLR8grB1p96vcMck4NrtG.png"
+              class="w-image w-image-25"
+              sizes="100vw"
+              srcset="
+                assets/p3i2_YLR8grB1p96vcMck4NrtG.png"
+              decoding="async"
+              loading="lazy"
+            /><img
+              alt=""
+              width="1433"
+              height="761"
+              src="assets/p3i1_wJXWJ91raPpxX_YGktw7-.png"
+              class="w-image w-image-26"
+              sizes="100vw"
+              srcset="
+                assets/p3i1_wJXWJ91raPpxX_YGktw7-.png"
+              decoding="async"
+              loading="lazy"
+            /><img
+              alt=""
+              width="1583"
+              height="811"
+              src="assets/c3_edgLBS1TyJ7oNZfDxnJPU.png"
+              class="w-image w-image-27"
+              sizes="100vw"
+              srcset="
+                assets/c3_edgLBS1TyJ7oNZfDxnJPU.png"
+              decoding="async"
+              loading="lazy"
+            /><img
+              alt=""
+              width="1539"
+              height="761"
+              src="assets/c4_I1lp0w9bWK3IQjtEhVdxn.png"
+              class="w-image w-image-28"
+              sizes="100vw"
+              srcset="
+                assets/c4_I1lp0w9bWK3IQjtEhVdxn.png"
+              decoding="async"
+              loading="lazy"
+            />
+          </div>
+          <div class="w-element projBody">
+            <div class="w-element projTitle">
+              <h3 class="w-element">
+                Interconnected Dynamics: Population, Climate, Healthcare &amp;
+                Urban Mobility
+              </h3>
+              <a
+                href="https://github.com/SanthoshKumarSureshKumar/Tableau-Projects/tree/main/Interconnected%20Dynamics%3A%20Analyzing%20Population%2C%20Climate%2C%20Healthcare%20and%20Urban%20Mobility%20in%20the%20United%20States"
+                target="_blank"
+                rel="noreferrer"
+                class="w-element smallBtn"
+                >GitHub</a
+              >
+            </div>
+            <p class="w-element w-element-72 muted">
+              Built a Tableau visualization project combining four U.S.
+              datasets—statewise population (2020), climate surface temperature
+              trends, hospital locations/ownership, and Chicago daily traffic
+              counts—to explain how demographic patterns, climate variation,
+              healthcare access, and city mobility relate to each other. Cleaned
+              and standardized the datasets, performed exploratory analysis, and
+              produced map-based visuals for population distribution,
+              temperature gradients, hospital ownership clusters in Chicago, and
+              a traffic heatmap to highlight congestion hotspots for planning
+              and policy insights.
+            </p>
+          </div>
+        </article>
+        <article class="w-element w-element-34 card projCard">
+          <div class="w-element w-element-31">
+            <img
+              alt=""
+              width="1600"
+              height="800"
+              src="assets/p2_NvTq06Nn9kwhnUrAd9nw_.png"
+              class="w-image w-image-5"
+              sizes="100vw"
+              srcset="
+                assets/p2_NvTq06Nn9kwhnUrAd9nw_.png"
+              decoding="async"
+              loading="lazy"
+            /><img
+              alt=""
+              width="1400"
+              height="800"
+              src="assets/p1_g4GnBcfzsY2OtWe7YM9dM.png"
+              class="w-image w-image-6"
+              sizes="100vw"
+              srcset="
+                assets/p1_g4GnBcfzsY2OtWe7YM9dM.png"
+              decoding="async"
+              loading="lazy"
+            /><img
+              alt=""
+              width="1304"
+              height="652"
+              src="assets/p3i3_XiSsTK7ie1FfHPK_bScoO.png"
+              class="w-image w-image-7"
+              sizes="100vw"
+              srcset="
+                assets/p3i3_XiSsTK7ie1FfHPK_bScoO.png"
+              decoding="async"
+              loading="lazy"
+            /><img
+              alt=""
+              width="1600"
+              height="800"
+              src="assets/p3i4_FiSvzxQFRxTriQZUIzrOZ.png"
+              class="w-image w-image-8"
+              sizes="100vw"
+              srcset="
+                assets/p3i4_FiSvzxQFRxTriQZUIzrOZ.png"
+              decoding="async"
+              loading="lazy"
+            />
+          </div>
+          <div class="w-element projBody">
+            <div class="w-element projTitle">
+              <h3 class="w-element">
+                COVID-19 Mobility Patterns &amp; Tourism
+              </h3>
+              <a
+                href="https://github.com/SanthoshKumarSureshKumar/Tableau-Projects/tree/main/Analyzing%20the%20Impact%20of%20COVID-19%20on%20%20Mobility%20Patterns"
+                target="_blank"
+                rel="noreferrer"
+                class="w-element smallBtn"
+                >GitHub</a
+              >
+            </div>
+            <p class="w-element w-element-39 muted">
+              Built a Tableau dashboard using Google Community Mobility
+              (2020–2022) and tourism/mobility data (1995–2021) to examine
+              movement shifts during COVID-19. Cleaned datasets, aligned dates,
+              and created KPI summaries for retail, grocery, parks, transit,
+              workplaces, and residential categories. Designed interactive
+              filters to compare regions and periods, highlighting recovery
+              speed and persistent behavior change. Included baseline
+              explanations, annotations, and clear navigation for nontechnical
+              viewers. Provided slicers for weekday/weekend views and emphasized
+              privacy-safe aggregated mobility reporting weekly.
+            </p>
+          </div>
+        </article>
+        <article class="w-element w-element-73 card projCard">
+          <div class="w-element w-element-74">
+            <img
+              alt=""
+              width="1440"
+              height="900"
+              src="assets/live_resume_ui_01_mR6lpgIRq-ELpIsBBtfSw.png"
+              class="w-image w-image-29"
+              sizes="100vw"
+              srcset="
+                assets/live_resume_ui_01_mR6lpgIRq-ELpIsBBtfSw.png"
+              decoding="async"
+              loading="lazy"
+            /><img
+              alt=""
+              width="1440"
+              height="900"
+              src="assets/live_resume_ui_02_DONrlT7zp_bo_yj-LLdq-.png"
+              class="w-image w-image-30"
+              sizes="100vw"
+              srcset="
+                assets/live_resume_ui_02_DONrlT7zp_bo_yj-LLdq-.png"
+              decoding="async"
+              loading="lazy"
+            /><img
+              alt=""
+              width="1440"
+              height="900"
+              src="assets/live_resume_ui_03_Xic_plRltbgqm7PkuUOcO.png"
+              class="w-image w-image-31"
+              sizes="100vw"
+              srcset="
+                assets/live_resume_ui_03_Xic_plRltbgqm7PkuUOcO.png"
+              decoding="async"
+              loading="lazy"
+            /><img
+              alt=""
+              width="1440"
+              height="900"
+              src="assets/live_resume_ui_04_8koOGpMFFcQBy1CgGQzhu.png"
+              class="w-image w-image-32"
+              sizes="100vw"
+              srcset="
+                assets/live_resume_ui_04_8koOGpMFFcQBy1CgGQzhu.png"
+              decoding="async"
+              loading="lazy"
+            />
+          </div>
+          <div class="w-element projBody">
+            <div class="w-element projTitle">
+              <h3 class="w-element">
+                Live Resume &amp; Cover Letter Generator (Flask + LangChain)
+              </h3>
+              <a
+                href="https://github.com/SanthoshKumarSureshKumar/Live-Resume-and-Cover-Letter"
+                target="_blank"
+                rel="noreferrer"
+                class="w-element smallBtn"
+                >GitHub</a
+              >
+            </div>
+            <p class="w-element w-element-75 muted">
+              Built a lightweight web app that generates a tailored
+              <b class="w-element">resume (DOCX)</b> and
+              <b class="w-element">cover letter (PDF)</b> from a user’s uploaded
+              base resume and a pasted job description. The front end provides a
+              simple input form to submit the job description and download the
+              generated outputs, while the Flask backend orchestrates the
+              generation flow and keeps running until the user clicks a
+              <b class="w-element">Terminate Process</b> button for graceful
+              shutdown.
+            </p>
+          </div>
+        </article>
+      </section>
+      <section id="publications" class="w-element section">
+        <h2 class="w-element">Publications</h2>
+        <div class="w-element grid two">
+          <article class="w-element card">
+            <h3 class="w-element w-element-17">
+              Optimizing Healthcare Delivery with Seamless Integration of CDS
+              and EHR Systems
+            </h3>
+            <p class="w-element w-element-40">
+              Published in AIP Conference Proceedings, 2025 <br />DOI:
+              <a href="https://doi.org/10.1063/5.0255988" class="w-element"
+                >https://doi.org/10.1063/5.0255988</a
+              >
+            </p>
+            <p class="w-element w-element-43 muted">
+              Healthcare organizations aim to improve service efficiency and
+              patient outcomes by integrating clinical decision support (CDS)
+              with electronic health record (EHR) systems. This integration
+              offers benefits such as better care coordination, increased
+              effectiveness, and reduced errors. However, challenges include
+              installation costs and the need for clinician training. The report
+              suggests creating a precise implementation strategy and involving
+              clinicians to overcome these issues. Despite the difficulties, the
+              potential benefits to patient care make this integration
+              worthwhile for healthcare organizations.
+            </p>
+            <div class="w-element w-element-18">
+              <a
+                href="https://doi.org/10.1063/5.0255988"
+                target="_blank"
+                rel="noreferrer"
+                class="w-element smallBtn"
+                >Read</a
+              >
+            </div>
+          </article>
+          <article class="w-element card">
+            <h3 class="w-element w-element-19">
+              Virtual Persona in E-commerce and its Engagement with Customers in
+              XR
+            </h3>
+            <p class="w-element w-element-41">
+              Published in AIP Conference Proceedings, 2025 DOI:
+              <a href="https://doi.org/10.1063/5.0254757" class="w-element"
+                >https://doi.org/10.1063/5.0254757</a
+              >
+            </p>
+            <p class="w-element w-element-42 muted">
+              A &quot;Virtual Persona&quot; is a digital representation of a
+              user or customer in e-commerce, ranging from a profile picture to
+              an interactive 3D model. These personas can enhance online
+              shopping by increasing customer engagement, improving the shopping
+              experience, and boosting loyalty. However, implementing them
+              requires technical expertise and raises privacy concerns. Overall,
+              Virtual Personas have the potential to transform customer
+              interactions in e-commerce.
+            </p>
+            <div class="w-element w-element-20">
+              <a
+                href="https://doi.org/10.1063/5.0254757"
+                target="_blank"
+                rel="noreferrer"
+                class="w-element smallBtn"
+                >Read</a
+              >
+            </div>
+          </article>
+        </div>
+      </section>
+      <section id="resume" class="w-element section">
+        <h2 class="w-element">Resume</h2>
+        <div class="w-element resumeFrame">
+          <div class="w-element bar">
+            <div class="w-element">
+              <div class="w-element w-element-21">Resume (PDF)</div>
+              <div class="w-element w-element-22 muted">
+                View here + download.
+              </div>
+            </div>
+            <div class="w-element w-element-23">
+              <a
+                href="resume.pdf"
+                download=""
+                class="w-element smallBtn"
+                >Download</a
+              >
+            </div>
+          </div>
+          <iframe
+            src="resume.pdf"
+            title="Resume PDF"
+            class="w-element"
+          ></iframe>
+        </div>
+      </section>
+      <section id="contact" class="w-element section">
+        <h2 class="w-element">Contact</h2>
+        <div class="w-element w-element-60 card">
+          <div class="w-element w-element-44">
+            <h2 class="w-element">
+              Have a Data Project? Let&#x27;s Collaborate!
+            </h2>
+            <p class="w-element w-element-45">
+              If you have any questions or need my expertise, feel free to reach
+              out. Fill out the form and I&#x27;ll get back to you as soon as
+              possible.
+            </p>
+            <p class="w-element w-element-46">
+              <strong class="w-element">Address:</strong> Aurora, Illinois, USA
+            </p>
+            <p class="w-element w-element-47">
+              <strong class="w-element">Phone:</strong>
+              <a href="tel:+17793908922" class="w-element">+1 779 390 8922</a>
+            </p>
+            <p class="w-element w-element-48">
+              <strong class="w-element">Email:</strong>
+              <a href="mailto:santhosh2003.ac@gmail.com" class="w-element"
+                >santhosh2003.ac@gmail.com</a
+              >
+            </p>
+            <p class="w-element w-element-49">
+              <strong class="w-element">LinkedIn:</strong>
+              <a
+                href="https://www.linkedin.com/in/s-santhosh-kumar-"
+                class="w-element"
+                >LinkedIn</a
+              >
+            </p>
+          </div>
+          <form
+            class="w-element w-element-50"
+            action="REPLACE_FORMSPREE_ACTION_URL"
+            method="POST"
+          >
+            <label class="w-element w-element-51">Name:</label
+            ><input
+              type="text"
+              placeholder="e.g John Doe"
+              class="w-element w-element-52"
+              name="name"
+            /><label class="w-element w-element-53">Email:</label
+            ><input
+              type="email"
+              placeholder="e.g johndoe@mail.com"
+              class="w-element w-element-54"
+              name="email"
+            /><label class="w-element w-element-55">Phone:</label
+            ><input
+              type="tel"
+              placeholder="Phone Number"
+              class="w-element w-element-56"
+              name="phone"
+            /><label class="w-element w-element-57">Message:</label
+            ><textarea
+              name="message"
+              placeholder="Write message..."
+              class="w-element w-element-58"
+            ></textarea
+            ><button type="submit" class="w-element w-element-59">Send</button>
+          </form>
+        </div>
+      </section>
+      <footer class="w-element footer">
+        <div class="w-element w-element-24">
+          <span class="w-element"
+            >© <span id="y" class="w-element"></span> Santhosh Kumar</span
+          >
+        </div>
+      </footer>
+    </main>
+</body>
+</html>
